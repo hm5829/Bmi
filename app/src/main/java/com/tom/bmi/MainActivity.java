@@ -10,12 +10,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    View.OnClickListener listener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            
-        }
-    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +17,16 @@ public class MainActivity extends AppCompatActivity {
         // getResources().getString(R.string.app_name);
         // 上面 = "Bmi"
         Button bInfo = (Button) findViewById(R.id.b_info);
-        bInfo.setOnClickListener(listener);
+        bInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("hi")
+                        .setMessage("BMI等於身高除以體重平方")
+                        .setPositiveButton("OK", null)
+                        .show();
+            }
+        });
     }
     public void bmi(View view){
      //   System.out.println();
