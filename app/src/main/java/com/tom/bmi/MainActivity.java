@@ -44,13 +44,20 @@ public class MainActivity extends AppCompatActivity {
                     .setPositiveButton(R.string.ok, null)
                     .show();
         }
-        if (bmi < 20){
+        if (bmi < 20 && height <= 3){
             new AlertDialog.Builder(this)
                     .setMessage("Your BMI is" + bmi)
                     .setTitle("請多吃點")
                     .setPositiveButton("OK", null)
                     .show();
 
+        }
+        if(height > 3){
+            new AlertDialog.Builder(this)
+                    .setTitle("注意")
+                    .setMessage("身高單位應為公尺")
+                    .setPositiveButton("OK", null)
+                    .show();
         }
 
         /*Log.d("MainActivity", "You Bmi is : " +bmi);
